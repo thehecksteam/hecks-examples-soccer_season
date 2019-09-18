@@ -1,0 +1,62 @@
+#!/usr/bin/env ruby
+
+domain :SoccerSeason do
+  summary     'Soccer Season Scheduler'
+  description 'Soccer Season is a more complex domain generaged by HecksDomain'
+  version     '0.1.0'
+  authors     ['SoccerSeason Developer']
+  email       'dev@soccer_season.com'
+  homepage    'http://www.example.com'
+
+  aggregate :Matches do
+    root :Match do
+      value(:fixture).as :Fixture
+      optional list(:goals).as(:Goal)
+      optional entity(:result).as :Result
+      list(:teams).as Teams: :Team
+      entity(:pitch).as :Pitch
+      operations %i[AddGoal]
+    end
+
+    value(:Result) do
+      entity(:loser).as Teams: :Team
+      entity(:winner).as Teams: :Team
+      read_only boolean(:tied)
+    end
+
+    value(:TiedResult) do
+    end
+
+    value(:Goal) do
+      string :time
+      entity(:player).as Players: :Player
+    end
+
+    value(:Fixture) do
+      string :season
+      string :date
+      string :time
+    end
+
+    value(:Pitch) do
+      string :name
+    end
+  end
+
+  aggregate :Teams do
+    root(:Team) { string :name }
+  end
+
+  aggregate :Players do
+    root(:Player) do
+      string :name
+      entity(:team).as Teams: :Team
+    end
+  end
+
+  aggregate :Pitches do
+    root(:Pitch) do
+      string :name
+    end
+  end
+end
