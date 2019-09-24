@@ -21,6 +21,10 @@ module SoccerSeason
             instance.create(match)
           end
 
+          def self.all
+            @objects.values
+          end
+
           def create(match)
             klass = self.class.const_get(
               self.class.to_s.gsub('::Repository', '')
