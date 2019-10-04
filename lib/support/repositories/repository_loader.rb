@@ -17,6 +17,10 @@ class Support
           def fetch(fetchable)
             self::Repository.fetch(fetchable)
           end
+
+          def all
+            self::Repository.all
+          end
         end
       end
     end
