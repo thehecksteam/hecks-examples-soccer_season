@@ -22,6 +22,10 @@ module SoccerSeason
           end
 
           def self.all
+            instance.all
+          end
+
+          def all
             @objects.values
           end
 
@@ -29,7 +33,7 @@ module SoccerSeason
             klass = self.class.const_get(
               self.class.to_s.gsub('::Repository', '')
             )
-            domain_object = klass.default(pitch)
+            domain_object = klass.build(pitch)
             domain_object.tap(&:save)
           end
 

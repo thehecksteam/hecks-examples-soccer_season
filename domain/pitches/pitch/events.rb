@@ -1,9 +1,9 @@
-Dir[File.dirname(__FILE__) + '/invariants/*.rb'].each {|file| require_relative file }
+Dir[File.dirname(__FILE__) + '/events/*.rb'].each { |file| require_relative file }
 module SoccerSeason
   module Domain
     module Pitches
       class Pitch
-        module Invariants
+        module Events
         end
       end
     end

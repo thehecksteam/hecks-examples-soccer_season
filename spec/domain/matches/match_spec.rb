@@ -6,18 +6,18 @@ describe SoccerSeason::Domain::Matches::Match do
   subject { match }
   let(:red_team) do 
     SoccerSeason::Domain::Teams::Team::Repository.save(
-      SoccerSeason::Domain::Teams::Team.default(name: 'red_team')
+      SoccerSeason::Domain::Teams::Team.build(name: 'red_team')
     )
   end
   let(:blue_team) do
     SoccerSeason::Domain::Teams::Team::Repository.save(
-      SoccerSeason::Domain::Teams::Team.default(name: 'blue_team')
+      SoccerSeason::Domain::Teams::Team.build(name: 'blue_team')
     )
   end
 
-  describe '.default' do
+  describe '.build' do
     it do
-      match = SoccerSeason::Domain::Matches::Match.default(
+      match = SoccerSeason::Domain::Matches::Match.build(
         id: 2,
         fixture: {
           season: 'summer',

@@ -8,4 +8,3 @@ module SoccerSeason
     end
   end
 end
-

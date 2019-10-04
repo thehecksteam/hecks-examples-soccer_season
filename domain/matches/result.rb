@@ -12,7 +12,7 @@ module SoccerSeason
           @winner = winner
           @tied = nil
         end
-        
+
         def tied?
           @tied
         end

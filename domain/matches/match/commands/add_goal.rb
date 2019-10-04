@@ -13,10 +13,9 @@ module SoccerSeason
             end
 
             def call
-              tap do |command|
-                @root.instance_eval do
-                  @goals << Goal.new(time: command.time, player: command.player)
-                end
+              args = @args
+              @root.instance_eval do
+                @goals << Goal.new(time: args[:time], player: args[:player])
               end
             end
           end

@@ -3,8 +3,8 @@ require 'spec_helper'
 describe SoccerSeason::Domain::Players::Player do
   subject { match }
 
-  describe '.default' do
-    SoccerSeason::Domain::Players::Player.default(
+  describe '.build' do
+    SoccerSeason::Domain::Players::Player.build(
       name: 'redteam', team: { name: 'foo' }
     )
   end

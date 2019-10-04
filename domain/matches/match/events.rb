@@ -1,9 +1,9 @@
-Dir[File.dirname(__FILE__) + '/commands/*.rb'].each {|file| require_relative file }
+Dir[File.dirname(__FILE__) + '/events/*.rb'].each { |file| require_relative file }
 module SoccerSeason
   module Domain
     module Matches
       class Match
-        module Commands
+        module Events
         end
       end
     end
