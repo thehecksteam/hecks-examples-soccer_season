@@ -109,8 +109,6 @@ describe 'Playground' do
       command = result.command.class.to_s
     end
 
-    require 'pry'; binding.pry
-
     expect(command).to include('AddGoal')
   end
 end
