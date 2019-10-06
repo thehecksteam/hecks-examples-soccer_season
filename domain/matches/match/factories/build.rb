@@ -25,10 +25,10 @@ module SoccerSeason
                   fixture: Fixture.build(args[:fixture]),
                   goals: Goal.build(args[:goals] || []),
                   result: Result.build(args[:result]),
-                  teams: Domain::Teams::Team.build(args[:teams]) || [],
+                  teams: Domain::Teams::Team.build(args[:teams] || []),
                   pitch: Pitch.build(args[:pitch]),
                 )
-            )
+              )
             end
           end
         end
