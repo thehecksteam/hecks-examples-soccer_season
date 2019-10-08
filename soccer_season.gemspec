@@ -8,4 +8,5 @@ Gem::Specification.new do |s|
   s.email       = 'dev@soccer_season.com'
   s.files       = Dir['lib/**/*.rb', 'domain/**/*.rb', 'events/**/*.rb', 'Domainfile']
   s.homepage    = 'http://www.example.com'
+  s.metadata    = { 'hecks_domain' => 'true' }
 end
