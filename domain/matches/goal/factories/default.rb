@@ -5,7 +5,6 @@ module SoccerSeason
         module Factories
           class Default
             def self.factory(args)
-              binding.pry
               Goal.new(args)
             end
           end
