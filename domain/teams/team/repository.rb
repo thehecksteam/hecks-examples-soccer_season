@@ -25,8 +25,16 @@ module SoccerSeason
             instance.all
           end
 
+          def self.destroy(team)
+            instance.destroy(team)
+          end
+
           def all
             @objects.values
+          end
+
+          def destroy(team)
+            @objects.delete(team.id)
           end
 
           def create(team)

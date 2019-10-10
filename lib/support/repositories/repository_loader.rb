@@ -7,6 +7,10 @@ class Support
             test_invariants
             self.class::Repository.save(self)
           end
+
+          def destroy
+            self.class::Repository.destroy(self)
+          end
         end
 
         base.instance_eval do
